@@ -22,3 +22,7 @@
   display: flex;
   gap: 2rem;
 }
+
+.f-icons:hover {
+  cursor: pointer;
+}
