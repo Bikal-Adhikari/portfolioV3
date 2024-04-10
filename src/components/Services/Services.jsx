@@ -18,7 +18,9 @@ const Services = () => {
           database management, secure infrastructure deployment, and reliable
           ongoing support.
         </span>
-        <button className="button s-button">Download CV</button>
+        <a href="" download>
+          <button className="button s-button">Download CV</button>
+        </a>
         <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
       </div>
       <div className="cards">
@@ -43,6 +45,10 @@ const Services = () => {
             detail="Jenkins, Travis CI, GitLab CI, GitHub Actions"
           />
         </div>
+        <div
+          className="blur s-blur"
+          style={{ background: "var(--purple)" }}
+        ></div>
       </div>
     </div>
   );
