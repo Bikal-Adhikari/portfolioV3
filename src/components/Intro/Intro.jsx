@@ -12,10 +12,15 @@ import Crown from "../../img/crown.png";
 import glasses from "../../img/glassesimoji.png";
 import { themeContext } from "../../Context";
 import { useContext } from "react";
+import { motion } from "framer-motion";
 
 const Intro = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
+  const transition = {
+    duration: 2,
+    type: "spring",
+  };
   return (
     <div className="intro">
       <div className="i-left">
@@ -44,13 +49,29 @@ const Intro = () => {
         <img src={Vector1} alt="vector1" />
         <img src={Vector2} alt="vector2" />
         <img src={Bikal} alt="Bikal" />
-        <img src={glasses} alt="glasses" />
-        <div style={{ top: "-4%", left: "60%" }}>
+        <motion.img
+          initial={{ left: "-36%" }}
+          whileInView={{ left: "-24%" }}
+          transition={transition}
+          src={glasses}
+          alt="glasses"
+        />
+        <motion.div
+          initial={{ top: "-4%", left: "74%" }}
+          whileInView={{ left: "68%" }}
+          transition={transition}
+          style={{ top: "-4%", left: "60%" }}
+        >
           <FloatingDiv image={Crown} txt1="Software" txt2="Engineer" />
-        </div>
-        <div style={{ top: "18rem", left: "-5rem" }}>
+        </motion.div>
+        <motion.div
+          initial={{ left: "9rem", top: "18rem" }}
+          whileInView={{ left: "0rem" }}
+          transition={transition}
+          style={{ top: "18rem", left: "-5rem" }}
+        >
           <FloatingDiv image={thumbup} txt1="Best Service" txt2="Award" />
-        </div>
+        </motion.div>
         <div className="blur" style={{ background: "rgb(238 210 255" }}></div>
         <div
           className="blur"
